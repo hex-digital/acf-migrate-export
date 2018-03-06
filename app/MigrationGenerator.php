@@ -6,7 +6,8 @@ use App\Models\Export;
 
 class MigrationGenerator
 {
-    public function createMigrations(Export $export) {
-
+    public function createMigrations(Export $export): string
+    {
+        return '';
     }
 }
