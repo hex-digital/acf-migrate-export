@@ -5,7 +5,7 @@ namespace App\Parsers;
 use App\Models\AbstractField;
 use App\Models\FieldGroup;
 
-class FieldGroupParser
+class FieldGroupParser implements ParserInterface
 {
     /**
      * Create a FieldGroup object from an Array of field group data.
