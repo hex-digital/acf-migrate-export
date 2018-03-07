@@ -4,5 +4,4 @@ namespace App\Parsers;
 
 class FieldParser
 {
-
 }

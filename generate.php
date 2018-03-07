@@ -16,8 +16,7 @@
  * the ACF fields now live in version control, with all the benefits that
  * provides.
  */
-
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__.'/vendor/autoload.php';
 
 use App\MigrationGenerator;
 use App\Models\Export;
@@ -45,12 +44,12 @@ if (!isset($options['f'])) {
 
 $exportFilePath = $options['f'];
 if (!isset($options['a'])) {
-    $exportFilePath = __DIR__ . '/' . $exportFilePath;
+    $exportFilePath = __DIR__.'/'.$exportFilePath;
 }
 
 if (!file_exists($exportFilePath)) {
     Helpers\ConsoleOutput::write(
-        'Could not locate file ' . $exportFilePath . '. Add flag -a if using an absolute path',
+        'Could not locate file '.$exportFilePath.'. Add flag -a if using an absolute path',
         Helpers\ConsoleOutput::ERROR
     );
     die();
@@ -63,16 +62,18 @@ include $exportFilePath;
 // Now everything will be in $export, so we can generate our migrations file
 // $migrationGenerator->createMigrations($export);
 
-
 /* Helper Functions for the ACF Export */
 
 /**
  * Used to add a Field Group to the global export, so that a migration file can
  * be generated from it.
+ *
  * @param array $fieldGroupArray Array of Field Groups from ACF export
+ *
  * @return void
  */
-function addFieldGroupToExport(array $fieldGroupArray): void {
+function addFieldGroupToExport(array $fieldGroupArray): void
+{
     global $export;
 
     $fieldGroupParser = new Parsers\FieldGroupParser();
@@ -85,10 +86,13 @@ function addFieldGroupToExport(array $fieldGroupArray): void {
  * Helper function - this is the function that the exported code from ACF calls
  * for each Field Group. By using this helper function, we can simply plug the
  * PHP ACF export straight into this code without having to modify it at all.
- * This function simply passes along the fieldGroupArray to the real function
- * @param  array  $fieldGroupArray Array of Field Groups from ACF export
+ * This function simply passes along the fieldGroupArray to the real function.
+ *
+ * @param array $fieldGroupArray Array of Field Groups from ACF export
+ *
  * @return void
  */
-function acf_add_local_field_group(array $fieldGroupArray): void {
+function acf_add_local_field_group(array $fieldGroupArray): void
+{
     addFieldGroupToExport($fieldGroupArray);
 }

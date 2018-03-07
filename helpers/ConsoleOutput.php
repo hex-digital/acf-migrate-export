@@ -20,21 +20,21 @@ class ConsoleOutput
         if ($type !== null) {
             switch ($type) {
                 case self::ERROR:
-                    $textPrefix = self::COLOR_ERROR . "Error: ";
+                    $textPrefix = self::COLOR_ERROR.'Error: ';
                     break;
                 case self::SUCCESS:
-                    $textPrefix = self::COLOR_SUCCESS . "Success: ";
+                    $textPrefix = self::COLOR_SUCCESS.'Success: ';
                     break;
                 case self::WARN:
                 default:
-                    $textPrefix = self::COLOR_WARN . "Warning: ";
+                    $textPrefix = self::COLOR_WARN.'Warning: ';
                     break;
             }
-            $output .= $textPrefix . self::COLOR_RESET;
+            $output .= $textPrefix.self::COLOR_RESET;
         }
 
         $output .= $message;
 
-        echo $output . PHP_EOL;
+        echo $output.PHP_EOL;
     }
 }
