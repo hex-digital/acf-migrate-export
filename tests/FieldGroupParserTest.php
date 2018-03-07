@@ -41,7 +41,7 @@ final class FieldGroupParserTest extends TestCase
      * @depends testDoesReturnFieldGroupObject
      * @dataProvider fieldGroupArrayProvider
      */
-    public function testCanParseOptions(array $fieldGroupArray): void
+    public function testCanParseCorrectAmountOfOptions(array $fieldGroupArray): void
     {
         $fieldGroupParser = new App\Parsers\FieldGroupParser();
         $fieldGroup = $fieldGroupParser->parseToFieldGroup($fieldGroupArray);
