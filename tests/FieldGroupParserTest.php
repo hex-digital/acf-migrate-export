@@ -11,7 +11,7 @@ final class FieldGroupParserTest extends TestCase
     public function testDoesReturnFieldGroupObject(array $fieldGroupArray): void
     {
         $fieldGroupParser = new App\Parsers\FieldGroupParser();
-        $fieldGroup = $fieldGroupParser->parseToFieldGroup($fieldGroupArray);
+        $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
         $this->assertInstanceOf(App\Models\FieldGroup::class, $fieldGroup);
     }
 
@@ -22,7 +22,7 @@ final class FieldGroupParserTest extends TestCase
     public function testCanParseKeyField(array $fieldGroupArray): void
     {
         $fieldGroupParser = new App\Parsers\FieldGroupParser();
-        $fieldGroup = $fieldGroupParser->parseToFieldGroup($fieldGroupArray);
+        $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
         $this->assertEquals($fieldGroup->getKey(), $fieldGroupArray['key']);
     }
 
@@ -33,7 +33,7 @@ final class FieldGroupParserTest extends TestCase
     public function testCanParseTitleField(array $fieldGroupArray): void
     {
         $fieldGroupParser = new App\Parsers\FieldGroupParser();
-        $fieldGroup = $fieldGroupParser->parseToFieldGroup($fieldGroupArray);
+        $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
         $this->assertEquals($fieldGroup->getTitle(), $fieldGroupArray['title']);
     }
 
@@ -44,7 +44,7 @@ final class FieldGroupParserTest extends TestCase
     public function testCanParseCorrectAmountOfOptions(array $fieldGroupArray): void
     {
         $fieldGroupParser = new App\Parsers\FieldGroupParser();
-        $fieldGroup = $fieldGroupParser->parseToFieldGroup($fieldGroupArray);
+        $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
         $this->assertCount(9, $fieldGroup->getOptions());
     }
 

@@ -15,13 +15,61 @@ class FieldGroupParser
      *
      * @return FieldGroup
      */
-    public function parseToFieldGroup(array $fieldGroupArray): FieldGroup
+    public function parse(array $fieldGroupArray): FieldGroup
     {
-        $key = $fieldGroupArray['key'];
-        $title = $fieldGroupArray['title'];
-        $fields = [];
-        $options = [];
+        $key = $this->extractKey($fieldGroupArray);
+        $title = $this->extractTitle($fieldGroupArray);
+        $fields = $this->extractFields($fieldGroupArray);
+        $options = $this->extractOptions($fieldGroupArray);
 
         return new FieldGroup($key, $title, $fields, $options);
+    }
+
+    /**
+     * Extract the key field value from a field group array
+     *
+     * @param array $fieldGroupArray
+     *
+     * @return string
+     */
+    protected function extractKey(array $fieldGroupArray): string
+    {
+        return $fieldGroupArray['key'];
+    }
+
+    /**
+     * Extract the title field value from a field group array
+     *
+     * @param array $fieldGroupArray
+     *
+     * @return string
+     */
+    protected function extractTitle(array $fieldGroupArray): string
+    {
+        return $fieldGroupArray['title'];
+    }
+
+    /**
+     * Extract the fields from a field group array
+     *
+     * @param array $fieldGroupArray
+     *
+     * @return array
+     */
+    protected function extractFields(array $fieldGroupArray): array
+    {
+        return [];
+    }
+
+    /**
+     * Extract the options from a field group array
+     *
+     * @param array $fieldGroupArray
+     *
+     * @return array
+     */
+    protected function extractOptions(array $fieldGroupArray): array
+    {
+        return [];
     }
 }

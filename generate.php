@@ -77,7 +77,7 @@ function addFieldGroupToExport(array $fieldGroupArray): void
     global $export;
 
     $fieldGroupParser = new Parsers\FieldGroupParser();
-    $fieldGroup = $fieldGroupParser->parseToFieldGroup($fieldGroupArray);
+    $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
 
     // $export->addFieldGroup($fieldGroup);
 }
