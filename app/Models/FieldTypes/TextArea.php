@@ -2,7 +2,9 @@
 
 namespace App\Models\FieldTypes;
 
-class TextArea
+use App\Models\AbstractField;
+
+class TextArea extends AbstractField
 {
 
 }

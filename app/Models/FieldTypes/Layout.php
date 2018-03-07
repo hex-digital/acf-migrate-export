@@ -2,7 +2,9 @@
 
 namespace App\Models\FieldTypes;
 
-class Layout
+use App\Models\AbstractField;
+
+class Layout extends AbstractField
 {
 
 }

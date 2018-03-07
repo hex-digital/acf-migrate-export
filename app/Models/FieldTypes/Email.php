@@ -2,7 +2,9 @@
 
 namespace App\Models\FieldTypes;
 
-class Email
+use App\Models\AbstractField;
+
+class Email extends AbstractField
 {
 
 }

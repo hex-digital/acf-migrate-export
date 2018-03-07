@@ -2,7 +2,9 @@
 
 namespace App\Models\FieldTypes;
 
-class FlexibleContent
+use App\Models\AbstractField;
+
+class FlexibleContent extends AbstractField
 {
 
 }

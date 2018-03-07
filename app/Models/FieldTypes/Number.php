@@ -2,7 +2,9 @@
 
 namespace App\Models\FieldTypes;
 
-class Number
+use App\Models\AbstractField;
+
+class Number extends AbstractField
 {
 
 }

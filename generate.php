@@ -5,7 +5,6 @@ require __DIR__ . '/vendor/autoload.php';
 use App\MigrationGenerator;
 use App\Models\Export;
 use App\Parsers;
-use Helpers;
 
 // We use a global variable because the export file calls the function
 // `acf_add_local_field_group()`. This way, we can use this to add the field
