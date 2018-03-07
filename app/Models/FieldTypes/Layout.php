@@ -6,5 +6,4 @@ use App\Models\AbstractField;
 
 class Layout extends AbstractField
 {
-
 }

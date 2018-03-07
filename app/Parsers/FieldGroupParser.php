@@ -2,15 +2,17 @@
 
 namespace App\Parsers;
 
-use App\Models\FieldGroup;
 use App\Models\AbstractField;
+use App\Models\FieldGroup;
 
 class FieldGroupParser
 {
     /**
      * Create a FieldGroup object from an Array of field group data.
      * This also turns all contained field data into AbstractField objects.
-     * @param  array  $fieldGroupArray
+     *
+     * @param array $fieldGroupArray
+     *
      * @return FieldGroup
      */
     public function parseToFieldGroup(array $fieldGroupArray): FieldGroup

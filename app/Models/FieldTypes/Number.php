@@ -6,5 +6,4 @@ use App\Models\AbstractField;
 
 class Number extends AbstractField
 {
-
 }
