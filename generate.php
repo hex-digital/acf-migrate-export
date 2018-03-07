@@ -1,5 +1,22 @@
 <?php
 
+/**
+ * This script is used to generate a migrations file from an ACF PHP export,
+ * for example the one generated in the backend of WordPress, within ACF plugin.
+ *
+ * php generate.php -f <filePath> [-a | if absolute path]
+ *
+ * This will take all the FieldGroups defined in the export, load them into an
+ * export varaible, and then use this export variable to generate a migrations
+ * file that can be used with acf-migrations.
+ * (github.com/hex-digital/acf-migrations)
+ *
+ * The end goal is to be able to take Custom Fields defined in the WordPress
+ * backend of ACF, and move them to a migrations.php file, which means that
+ * the ACF fields now live in version control, with all the benefits that
+ * provides.
+ */
+
 require __DIR__ . '/vendor/autoload.php';
 
 use App\MigrationGenerator;
