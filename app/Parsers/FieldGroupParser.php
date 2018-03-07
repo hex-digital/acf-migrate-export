@@ -7,6 +7,8 @@ use App\Models\FieldGroup;
 
 class FieldGroupParser implements ParserInterface
 {
+    const NON_OPTION_FIELDS = ['key', 'title', 'fields'];
+
     /**
      * Create a FieldGroup object from an Array of field group data.
      * This also turns all contained field data into AbstractField objects.
@@ -70,6 +72,14 @@ class FieldGroupParser implements ParserInterface
      */
     protected function extractOptions(array $fieldGroupArray): array
     {
-        return [];
+        $options = [];
+
+        foreach ($fieldGroupArray as $key => $value) {
+            if (!in_array($key, $this::NON_OPTION_FIELDS)) {
+                $options[$key] = $value;
+            }
+        }
+
+        return $options;
     }
 }
