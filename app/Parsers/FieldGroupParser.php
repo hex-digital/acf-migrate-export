@@ -51,6 +51,9 @@ class FieldGroupParser implements ParserInterface
      */
     protected function extractTitle(array $fieldGroupArray): string
     {
+        if (!isset($fieldGroupArray['title'])) {
+            throw new \OutOfBoundsException('A \'title\' could not be found for a Field Group');
+        }
         return $fieldGroupArray['title'];
     }
 

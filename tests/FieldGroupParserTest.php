@@ -51,6 +51,23 @@ final class FieldGroupParserTest extends TestCase
     {
         $fieldGroupParser = new App\Parsers\FieldGroupParser();
         $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
+
+        $this->assertEquals($fieldGroup->getTitle(), $fieldGroupArray['title']);
+    }
+
+    /**
+     * @depends testDoesReturnFieldGroupObject
+     * @depends testCanParseTitleField
+     * @dataProvider fieldGroupArrayProvider
+     */
+    public function testExceptionOnEmptyTitleField(array $fieldGroupArray): void
+    {
+        unset($fieldGroupArray['title']);
+        $this->expectException(OutOfBoundsException::class);
+
+        $fieldGroupParser = new App\Parsers\FieldGroupParser();
+        $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
+
         $this->assertEquals($fieldGroup->getTitle(), $fieldGroupArray['title']);
     }
 
