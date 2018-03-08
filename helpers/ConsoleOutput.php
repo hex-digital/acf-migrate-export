@@ -13,6 +13,14 @@ class ConsoleOutput
     const COLOR_SUCCESS = "\033[1;32m";
     const COLOR_RESET = "\033[0m";
 
+    /**
+     * Stylise and output a message to the console.
+     * Specifying a type adds a prefix and colour
+     *
+     * @param  string $message
+     * @param  string|null $type Optional type - use constant from self:
+     *                           ::ERROR, ::WARN or ::SUCCESS
+     */
     public static function write(string $message, $type = null)
     {
         $output = '--> ';
