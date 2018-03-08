@@ -35,6 +35,21 @@ final class FieldGroupParserTest extends TestCase
      */
     public function testCanParseEmptyKeyField(array $fieldGroupArray): void
     {
+        $fieldGroupArray['key'] = '';
+
+        $fieldGroupParser = new App\Parsers\FieldGroupParser();
+        $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
+
+        $this->assertNull($fieldGroup->getKey());
+    }
+
+    /**
+     * @depends testDoesReturnFieldGroupObject
+     * @depends testCanParseKeyField
+     * @dataProvider fieldGroupArrayProvider
+     */
+    public function testCanParseWithoutKeyField(array $fieldGroupArray): void
+    {
         unset($fieldGroupArray['key']);
 
         $fieldGroupParser = new App\Parsers\FieldGroupParser();
