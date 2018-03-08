@@ -66,7 +66,7 @@ class FieldGroupParser implements ParserInterface
      */
     protected function extractFields(array $fieldGroupArray): array
     {
-        return [];
+        return $fieldGroupArray['fields'];
     }
 
     /**

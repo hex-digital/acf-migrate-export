@@ -98,6 +98,50 @@ final class FieldGroupParserTest extends TestCase
         $this->assertCount(9, $fieldGroup->getOptions());
     }
 
+    /**
+     * @depends testDoesReturnFieldGroupObject
+     * @depends testCanParseCorrectAmountOfOptions
+     * @dataProvider fieldGroupArrayProvider
+     */
+    public function testCanParseZeroOptions(array $fieldGroupArray): void
+    {
+        $fieldGroupArray['fields'] = [];
+
+        $fieldGroupParser = new App\Parsers\FieldGroupParser();
+        $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
+
+        $this->assertNotNull($fieldGroup->getFields());
+        $this->assertCount(0, $fieldGroup->getFields());
+    }
+
+    /**
+     * @depends testDoesReturnFieldGroupObject
+     * @dataProvider fieldGroupArrayProvider
+     */
+    public function testCanParseCorrectAmountOfFields(array $fieldGroupArray): void
+    {
+        $fieldGroupParser = new App\Parsers\FieldGroupParser();
+        $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
+
+        $this->assertCount(2, $fieldGroup->getFields());
+    }
+
+    /**
+     * @depends testDoesReturnFieldGroupObject
+     * @depends testCanParseCorrectAmountOfFields
+     * @dataProvider fieldGroupArrayProvider
+     */
+    public function testCanParseZeroFields(array $fieldGroupArray): void
+    {
+        $fieldGroupArray['fields'] = [];
+
+        $fieldGroupParser = new App\Parsers\FieldGroupParser();
+        $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
+
+        $this->assertNotNull($fieldGroup->getFields());
+        $this->assertCount(0, $fieldGroup->getFields());
+    }
+
     public function fieldGroupArrayProvider(): array
     {
         return [
@@ -111,6 +155,27 @@ final class FieldGroupParserTest extends TestCase
                             'key' => 'field_589080989511c',
                             'label' => 'Group Title',
                             'name' => 'group_title',
+                            'type' => 'text',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => 0,
+                            'wrapper' => array (
+                                'width' => '',
+                                'class' => '',
+                                'id' => '',
+                            ),
+                            'default_value' => '',
+                            'maxlength' => '',
+                            'placeholder' => '',
+                            'prepend' => '',
+                            'append' => '',
+                            'readonly' => 0,
+                            'disabled' => 0,
+                        ),
+                        array (
+                            'key' => 'field_589080989521c',
+                            'label' => 'Group Slug',
+                            'name' => 'group_slug',
                             'type' => 'text',
                             'instructions' => '',
                             'required' => 0,
