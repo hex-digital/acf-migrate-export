@@ -12,6 +12,7 @@ final class FieldGroupParserTest extends TestCase
     {
         $fieldGroupParser = new App\Parsers\FieldGroupParser();
         $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
+
         $this->assertInstanceOf(App\Models\FieldGroup::class, $fieldGroup);
     }
 
@@ -23,6 +24,7 @@ final class FieldGroupParserTest extends TestCase
     {
         $fieldGroupParser = new App\Parsers\FieldGroupParser();
         $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
+
         $this->assertEquals($fieldGroup->getKey(), $fieldGroupArray['key']);
     }
 
@@ -45,6 +47,7 @@ final class FieldGroupParserTest extends TestCase
     {
         $fieldGroupParser = new App\Parsers\FieldGroupParser();
         $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
+
         $this->assertCount(9, $fieldGroup->getOptions());
     }
 
