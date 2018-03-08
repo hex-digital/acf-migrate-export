@@ -12,7 +12,7 @@ class FieldGroup
     const DEFAULT_OPTIONS = [];
 
     public function __construct(
-        string $key,
+        ?string $key,
         string $title,
         array $fields,
         array $options
@@ -23,7 +23,7 @@ class FieldGroup
         $this->options = $options;
     }
 
-    public function getKey(): string
+    public function getKey(): ?string
     {
         return $this->key;
     }

@@ -34,9 +34,12 @@ class FieldGroupParser implements ParserInterface
      *
      * @return string
      */
-    protected function extractKey(array $fieldGroupArray): string
+    protected function extractKey(array $fieldGroupArray): ?string
     {
-        return $fieldGroupArray['key'];
+        if (isset($fieldGroupArray['key'])) {
+            return $fieldGroupArray['key'];
+        }
+        return null;
     }
 
     /**
