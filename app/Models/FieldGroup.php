@@ -4,13 +4,26 @@ namespace App\Models;
 
 class FieldGroup
 {
+    /** @var string */
     protected $key;
+
+    /** @var string */
     protected $title;
+
+    /** @var array */
     protected $fields;
+
+    /** @var array */
     protected $options;
 
     const DEFAULT_OPTIONS = [];
 
+    /**
+     * @param ?string $key
+     * @param string $title
+     * @param array  $fields
+     * @param array  $options
+     */
     public function __construct(
         ?string $key,
         string $title,
@@ -23,33 +36,52 @@ class FieldGroup
         $this->options = $options;
     }
 
+    /**
+     * @return ?string
+     */
     public function getKey(): ?string
     {
         return $this->key;
     }
 
+    /**
+     * @return string
+     */
     public function getTitle(): string
     {
         return $this->title;
     }
 
+    /**
+     * @return array
+     */
     public function getFields(): array
     {
         return $this->fields;
     }
 
+    /**
+     * @param AbstractField $field
+     */
     public function addField(AbstractField $field): void
     {
         $this->fields[] = $field;
     }
 
+    /**
+     * @return array
+     */
     public function getOptions(): array
     {
         return $this->options;
     }
 
-    public function addOption(string $key, $value): void
+    /**
+     * @param string $name
+     * @param mixed $value
+     */
+    public function addOption(string $name, $value): void
     {
-        $this->options[$key] = $value;
+        $this->options[$name] = $value;
     }
 }
