@@ -47,6 +47,8 @@ class FieldGroupParser implements ParserInterface
      *
      * @param array $fieldGroupArray
      *
+     * @throws OutOfBoundsException if no title key is set in field group array
+     *
      * @return string
      */
     protected function extractTitle(array $fieldGroupArray): string
