@@ -12,9 +12,6 @@ abstract class AbstractField
     /** @var string */
     protected $label;
 
-    /** @var string */
-    protected $type;
-
     /** @var array */
     protected $subFields;
 
@@ -84,14 +81,6 @@ abstract class AbstractField
     }
 
     /**
-     * @return string
-     */
-    public function getType(): string
-    {
-        return $this->type;
-    }
-
-    /**
      * @return array
      */
     public function getSubFields(): array
@@ -122,5 +111,19 @@ abstract class AbstractField
     public function addOption(string $name, $value): void
     {
         $this->options[$name] = $value;
+    }
+
+    /**
+     * Return the options, stripping out those where both the key and value
+     * match a set in the default options for this field
+     *
+     * @return array
+     */
+    public function getOptionsWithoutDefaults(): array
+    {
+        $defaultOptions = static::DEFAULT_OPTIONS;
+        return array_filter($this->options, function($value, $key) use ($defaultOptions) {
+            return (!isset($defaultOptions[$key]) || $defaultOptions[$key] !== $value);
+        }, ARRAY_FILTER_USE_BOTH);
     }
 }

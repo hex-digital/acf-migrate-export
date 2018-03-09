@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
 
-final class FieldFactoryTest extends TestCase
+final class AbstractFieldTest extends TestCase
 {
     /**
      * @dataProvider fieldDataProvider
@@ -23,7 +23,7 @@ final class FieldFactoryTest extends TestCase
 
     /**
      * @depends testDoesReturnAbstractFieldObject
-     * @dataProvider allFieldsDataProvider
+     * @dataProvider allFieldsDefaultDataProvider
      */
     public function testDoesReturnCorrectConcreteField(array $fieldDataFromParser): void
     {
@@ -130,6 +130,22 @@ final class FieldFactoryTest extends TestCase
 
     }
 
+    /**
+     * @dataProvider allFieldsDefaultDataProvider
+     */
+    public function testDoesGetCorrectNumberOfNonDefaultOptions(array $fieldDataFromParser): void
+    {
+        $fieldObject = App\Models\AbstractField::createField(
+            $fieldDataFromParser['key'],
+            $fieldDataFromParser['label'],
+            $fieldDataFromParser['type'],
+            $fieldDataFromParser['sub_fields'],
+            $fieldDataFromParser['options']
+        );
+
+        $this->assertCount(1, $fieldObject->getOptionsWithoutDefaults());
+    }
+
     public function fieldDataProvider(): array
     {
         return [
@@ -145,7 +161,7 @@ final class FieldFactoryTest extends TestCase
         ];
     }
 
-    public function allFieldsDataProvider(): array
+    public function allFieldsDefaultDataProvider(): array
     {
         return [
             'Default text field' => [
@@ -323,10 +339,10 @@ final class FieldFactoryTest extends TestCase
                 [
                     'key' => 'field_5aa26ee1d40eb',
                     'label' => 'oEmbed',
-                    'name' => 'oembed',
                     'type' => 'oembed',
                     'sub_fields' => [],
                     'options' => [
+                        'name' => 'oembed',
                         'instructions' => '',
                         'required' => 0,
                         'conditional_logic' => 0,
