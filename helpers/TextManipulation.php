@@ -8,7 +8,7 @@ class TextManipulation
      * Takes some slug and formats it into a correct Classname
      * e.g. date_time_picker -> DateTimePicker
      *
-     * @param  stirng $slug
+     * @param  string $slug
      *
      * @return string
      */
