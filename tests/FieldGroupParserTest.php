@@ -105,13 +105,16 @@ final class FieldGroupParserTest extends TestCase
      */
     public function testCanParseZeroOptions(array $fieldGroupArray): void
     {
-        $fieldGroupArray['fields'] = [];
+        $keysToKeep = ['key', 'title', 'fields'];
+        $fieldGroupArray = array_filter($fieldGroupArray, function($value, $key) use ($keysToKeep) {
+            return (in_array($key, $keysToKeep));
+        }, ARRAY_FILTER_USE_BOTH);
 
         $fieldGroupParser = new App\Parsers\FieldGroupParser();
         $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
 
-        $this->assertNotNull($fieldGroup->getFields());
-        $this->assertCount(0, $fieldGroup->getFields());
+        $this->assertNotNull($fieldGroup->getOptions());
+        $this->assertCount(0, $fieldGroup->getOptions());
     }
 
     /**
@@ -145,7 +148,7 @@ final class FieldGroupParserTest extends TestCase
     public function fieldGroupArrayProvider(): array
     {
         return [
-            [
+            'Group with 2 text fields' => [
                 // array() syntax, as it comes from export file
                 array (
                     'key' => 'group_5890806ca5bd0',
