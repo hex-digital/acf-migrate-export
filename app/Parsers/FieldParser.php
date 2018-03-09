@@ -27,7 +27,7 @@ class FieldParser implements ParserInterface
     }
 
     /**
-     * Extract the key field value from a field array
+     * Extract the key field value from a field array.
      *
      * @param array $fieldArray
      *
@@ -38,11 +38,12 @@ class FieldParser implements ParserInterface
         if (isset($fieldArray['key']) && strlen($fieldArray['key']) > 0) {
             return $fieldArray['key'];
         }
+
         return null;
     }
 
     /**
-     * Extract the label field value from a field array
+     * Extract the label field value from a field array.
      *
      * @param array $fieldArray
      *
@@ -55,11 +56,12 @@ class FieldParser implements ParserInterface
         if (!isset($fieldArray['label'])) {
             throw new \OutOfBoundsException('A \'label\' could not be found for a Field');
         }
+
         return $fieldArray['label'];
     }
 
     /**
-     * Extract the type field value from a field array
+     * Extract the type field value from a field array.
      *
      * @param array $fieldArray
      *
@@ -72,11 +74,12 @@ class FieldParser implements ParserInterface
         if (!isset($fieldArray['type'])) {
             throw new \OutOfBoundsException('A \'type\' could not be found for a Field');
         }
+
         return $fieldArray['type'];
     }
 
     /**
-     * Extract the subfields from a field array
+     * Extract the subfields from a field array.
      *
      * @param array $fieldArray
      *
@@ -87,11 +90,12 @@ class FieldParser implements ParserInterface
         if (isset($fieldArray['sub_fields']) && count($fieldArray['sub_fields']) > 0) {
             return $fieldArray['sub_fields'];
         }
+
         return [];
     }
 
     /**
-     * Extract the options from a field array
+     * Extract the options from a field array.
      *
      * @param array $fieldArray
      *
