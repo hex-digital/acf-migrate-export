@@ -7,15 +7,15 @@ use App\Models\AbstractField;
 class TrueFalse extends AbstractField
 {
     const DEFAULT_OPTIONS = [
-        'instructions' => '',
-        'required' => 0,
+        'instructions'      => '',
+        'required'          => 0,
         'conditional_logic' => 0,
-        'wrapper' => [
+        'wrapper'           => [
             'width' => '',
             'class' => '',
-            'id' => '',
+            'id'    => '',
         ],
-        'message' => '',
+        'message'       => '',
         'default_value' => 0,
     ];
 

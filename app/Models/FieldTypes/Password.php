@@ -7,19 +7,19 @@ use App\Models\AbstractField;
 class Password extends AbstractField
 {
     const DEFAULT_OPTIONS = [
-        'instructions' => '',
-        'required' => 0,
+        'instructions'      => '',
+        'required'          => 0,
         'conditional_logic' => 0,
-        'wrapper' => [
+        'wrapper'           => [
             'width' => '',
             'class' => '',
-            'id' => '',
+            'id'    => '',
         ],
         'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'readonly' => 0,
-        'disabled' => 0,
+        'prepend'     => '',
+        'append'      => '',
+        'readonly'    => 0,
+        'disabled'    => 0,
     ];
 
     /**

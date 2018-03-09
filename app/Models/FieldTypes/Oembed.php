@@ -7,15 +7,15 @@ use App\Models\AbstractField;
 class Oembed extends AbstractField
 {
     const DEFAULT_OPTIONS = [
-        'instructions' => '',
-        'required' => 0,
+        'instructions'      => '',
+        'required'          => 0,
         'conditional_logic' => 0,
-        'wrapper' => [
+        'wrapper'           => [
             'width' => '',
             'class' => '',
-            'id' => '',
+            'id'    => '',
         ],
-        'width' => '',
+        'width'  => '',
         'height' => '',
     ];
 

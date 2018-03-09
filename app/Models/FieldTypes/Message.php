@@ -7,17 +7,17 @@ use App\Models\AbstractField;
 class Message extends AbstractField
 {
     const DEFAULT_OPTIONS = [
-        'instructions' => '',
-        'required' => 0,
+        'instructions'      => '',
+        'required'          => 0,
         'conditional_logic' => 0,
-        'wrapper' => [
+        'wrapper'           => [
             'width' => '',
             'class' => '',
-            'id' => '',
+            'id'    => '',
         ],
-        'message' => '',
+        'message'   => '',
         'new_lines' => 'wpautop',
-        'esc_html' => 0,
+        'esc_html'  => 0,
     ];
 
     /**

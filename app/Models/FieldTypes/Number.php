@@ -7,23 +7,23 @@ use App\Models\AbstractField;
 class Number extends AbstractField
 {
     const DEFAULT_OPTIONS = [
-        'instructions' => '',
-        'required' => 0,
+        'instructions'      => '',
+        'required'          => 0,
         'conditional_logic' => 0,
-        'wrapper' => [
+        'wrapper'           => [
             'width' => '',
             'class' => '',
-            'id' => '',
+            'id'    => '',
         ],
         'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'min' => '',
-        'max' => '',
-        'step' => '',
-        'readonly' => 0,
-        'disabled' => 0,
+        'placeholder'   => '',
+        'prepend'       => '',
+        'append'        => '',
+        'min'           => '',
+        'max'           => '',
+        'step'          => '',
+        'readonly'      => 0,
+        'disabled'      => 0,
     ];
 
     /**

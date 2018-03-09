@@ -7,17 +7,17 @@ use App\Models\AbstractField;
 class User extends AbstractField
 {
     const DEFAULT_OPTIONS = [
-        'instructions' => '',
-        'required' => 0,
+        'instructions'      => '',
+        'required'          => 0,
         'conditional_logic' => 0,
-        'wrapper' => [
+        'wrapper'           => [
             'width' => '',
             'class' => '',
-            'id' => '',
+            'id'    => '',
         ],
-        'role' => '',
+        'role'       => '',
         'allow_null' => 0,
-        'multiple' => 0,
+        'multiple'   => 0,
     ];
 
     /**

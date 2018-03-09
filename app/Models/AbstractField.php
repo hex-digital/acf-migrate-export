@@ -115,15 +115,16 @@ abstract class AbstractField
 
     /**
      * Return the options, stripping out those where both the key and value
-     * match a set in the default options for this field
+     * match a set in the default options for this field.
      *
      * @return array
      */
     public function getOptionsWithoutDefaults(): array
     {
         $defaultOptions = static::DEFAULT_OPTIONS;
-        return array_filter($this->options, function($value, $key) use ($defaultOptions) {
-            return (!isset($defaultOptions[$key]) || $defaultOptions[$key] !== $value);
+
+        return array_filter($this->options, function ($value, $key) use ($defaultOptions) {
+            return !isset($defaultOptions[$key]) || $defaultOptions[$key] !== $value;
         }, ARRAY_FILTER_USE_BOTH);
     }
 
