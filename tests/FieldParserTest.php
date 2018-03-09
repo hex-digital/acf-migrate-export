@@ -151,11 +151,8 @@ final class FieldParserTest extends TestCase
         $fieldParser = new App\Parsers\FieldParser();
         $field = $fieldParser->parse($fieldArray);
 
-        $non_option_fields = ['key', 'label', 'type', 'sub_fields', 'layouts'];
-
-        $optionFields = array_filter($fieldArray, function($value, $key) use ($non_option_fields) {
-            return (!in_array($key, $non_option_fields));
-        }, ARRAY_FILTER_USE_BOTH);
+        $nonOptionFields = ['key', 'label', 'type', 'sub_fields', 'layouts'];
+        $optionFields = array_diff_key($fieldArray, array_flip($nonOptionFields));
 
         $this->assertCount(count($optionFields), $field->getOptions());
     }
@@ -168,12 +165,10 @@ final class FieldParserTest extends TestCase
     public function testCanParseZeroOptions(array $fieldArray): void
     {
         $keysToKeep = ['key', 'label', 'type', 'sub_fields', 'layouts'];
-        $fieldArray = array_filter($fieldArray, function($value, $key) use ($keysToKeep) {
-            return (in_array($key, $keysToKeep));
-        }, ARRAY_FILTER_USE_BOTH);
+        $fieldGroupArrayWithoutOptions = array_intersect_key($fieldArray, array_flip($keysToKeep));
 
         $fieldParser = new App\Parsers\FieldParser();
-        $field = $fieldParser->parse($fieldArray);
+        $field = $fieldParser->parse($fieldGroupArrayWithoutOptions);
 
         $this->assertNotNull($field->getOptions());
         $this->assertCount(0, $field->getOptions());

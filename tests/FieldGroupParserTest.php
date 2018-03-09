@@ -106,12 +106,10 @@ final class FieldGroupParserTest extends TestCase
     public function testCanParseZeroOptions(array $fieldGroupArray): void
     {
         $keysToKeep = ['key', 'title', 'fields'];
-        $fieldGroupArray = array_filter($fieldGroupArray, function($value, $key) use ($keysToKeep) {
-            return (in_array($key, $keysToKeep));
-        }, ARRAY_FILTER_USE_BOTH);
+        $fieldGroupArrayWithoutOptions = array_intersect_key($fieldGroupArray, array_flip($keysToKeep));
 
         $fieldGroupParser = new App\Parsers\FieldGroupParser();
-        $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
+        $fieldGroup = $fieldGroupParser->parse($fieldGroupArrayWithoutOptions);
 
         $this->assertNotNull($fieldGroup->getOptions());
         $this->assertCount(0, $fieldGroup->getOptions());
