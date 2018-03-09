@@ -28,7 +28,7 @@ class FieldGroupParser implements ParserInterface
     }
 
     /**
-     * Extract the key field value from a field group array
+     * Extract the key field value from a field group array.
      *
      * @param array $fieldGroupArray
      *
@@ -39,11 +39,12 @@ class FieldGroupParser implements ParserInterface
         if (isset($fieldGroupArray['key'])) {
             return $fieldGroupArray['key'];
         }
+
         return null;
     }
 
     /**
-     * Extract the title field value from a field group array
+     * Extract the title field value from a field group array.
      *
      * @param array $fieldGroupArray
      *
@@ -54,11 +55,12 @@ class FieldGroupParser implements ParserInterface
         if (!isset($fieldGroupArray['title'])) {
             throw new \OutOfBoundsException('A \'title\' could not be found for a Field Group');
         }
+
         return $fieldGroupArray['title'];
     }
 
     /**
-     * Extract the fields from a field group array
+     * Extract the fields from a field group array.
      *
      * @param array $fieldGroupArray
      *
@@ -70,7 +72,7 @@ class FieldGroupParser implements ParserInterface
     }
 
     /**
-     * Extract the options from a field group array
+     * Extract the options from a field group array.
      *
      * @param array $fieldGroupArray
      *

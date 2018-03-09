@@ -13,6 +13,5 @@ class FieldParser implements ParserInterface
      */
     public function parse(array $fieldArray): Field
     {
-
     }
 }
