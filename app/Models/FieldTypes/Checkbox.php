@@ -7,17 +7,17 @@ use App\Models\AbstractField;
 class Checkbox extends AbstractField
 {
     const DEFAULT_OPTIONS = [
-        'instructions' => '',
-        'required' => 0,
+        'instructions'      => '',
+        'required'          => 0,
         'conditional_logic' => 0,
-        'wrapper' => [
+        'wrapper'           => [
             'width' => '',
             'class' => '',
-            'id' => '',
+            'id'    => '',
         ],
-        'choices' => [],
+        'choices'       => [],
         'default_value' => [],
-        'layout' => 'vertical',
-        'toggle' => 0,
+        'layout'        => 'vertical',
+        'toggle'        => 0,
     ];
 }

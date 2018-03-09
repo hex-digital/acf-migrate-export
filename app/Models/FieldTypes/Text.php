@@ -7,20 +7,20 @@ use App\Models\AbstractField;
 class Text extends AbstractField
 {
     const DEFAULT_OPTIONS = [
-        'instructions' => '',
-        'required' => 0,
+        'instructions'      => '',
+        'required'          => 0,
         'conditional_logic' => 0,
-        'wrapper' => [
+        'wrapper'           => [
             'width' => '',
             'class' => '',
-            'id' => '',
+            'id'    => '',
         ],
         'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-        'readonly' => 0,
-        'disabled' => 0,
+        'placeholder'   => '',
+        'prepend'       => '',
+        'append'        => '',
+        'maxlength'     => '',
+        'readonly'      => 0,
+        'disabled'      => 0,
     ];
 }

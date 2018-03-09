@@ -7,18 +7,18 @@ use App\Models\AbstractField;
 class Repeater extends AbstractField
 {
     const DEFAULT_OPTIONS = [
-        'instructions' => '',
-        'required' => 0,
+        'instructions'      => '',
+        'required'          => 0,
         'conditional_logic' => 0,
-        'wrapper' => [
+        'wrapper'           => [
             'width' => '',
             'class' => '',
-            'id' => '',
+            'id'    => '',
         ],
-        'collapsed' => '',
-        'min' => '',
-        'max' => '',
-        'layout' => 'table',
-        'button_label' => 'Add Row'
+        'collapsed'    => '',
+        'min'          => '',
+        'max'          => '',
+        'layout'       => 'table',
+        'button_label' => 'Add Row',
     ];
 }
