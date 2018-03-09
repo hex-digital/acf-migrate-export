@@ -25,12 +25,12 @@ abstract class AbstractField
 
     /**
      * @param ?string $key
-     * @param string $label
-     * @param string $type
-     * @param array  $sub_fields
-     * @param array  $options
+     * @param string  $label
+     * @param string  $type
+     * @param array   $sub_fields
+     * @param array   $options
      *
-     * @throws  UnexpectedValueException if unsupported field type passed
+     * @throws UnexpectedValueException if unsupported field type passed
      */
     public static function createField(
         ?string $key = null,
@@ -39,7 +39,7 @@ abstract class AbstractField
         array $subFields = [],
         array $options = []
     ) {
-        $fieldClassName = __NAMESPACE__ . '\\FieldTypes\\'.TextManipulation::slugToClassName($type);
+        $fieldClassName = __NAMESPACE__.'\\FieldTypes\\'.TextManipulation::slugToClassName($type);
 
         if (!class_exists($fieldClassName)) {
             throw new \UnexpectedValueException('Field type '.$type.' is currently unsupported. No Class '.$fieldClassName);
@@ -50,10 +50,10 @@ abstract class AbstractField
 
     /**
      * @param ?string $key
-     * @param string $label
-     * @param string $type
-     * @param array  $sub_fields
-     * @param array  $options
+     * @param string  $label
+     * @param string  $type
+     * @param array   $sub_fields
+     * @param array   $options
      */
     public function __construct(
         ?string $key = null,
@@ -102,7 +102,7 @@ abstract class AbstractField
     /**
      * @param AbstractField $field
      */
-    public function addSubField(AbstractField $field): void
+    public function addSubField(self $field): void
     {
         $this->subFields[] = $field;
     }
@@ -117,7 +117,7 @@ abstract class AbstractField
 
     /**
      * @param string $name
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function addOption(string $name, $value): void
     {

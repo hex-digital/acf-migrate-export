@@ -20,9 +20,9 @@ class FieldGroup
 
     /**
      * @param ?string $key
-     * @param string $title
-     * @param array  $fields
-     * @param array  $options
+     * @param string  $title
+     * @param array   $fields
+     * @param array   $options
      */
     public function __construct(
         ?string $key,
@@ -78,7 +78,7 @@ class FieldGroup
 
     /**
      * @param string $name
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function addOption(string $name, $value): void
     {
