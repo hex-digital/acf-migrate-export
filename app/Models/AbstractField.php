@@ -48,7 +48,6 @@ abstract class AbstractField
     /**
      * @param ?string $key
      * @param string  $label
-     * @param string  $type
      * @param array   $sub_fields
      * @param array   $options
      */
