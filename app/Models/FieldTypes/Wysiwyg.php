@@ -7,17 +7,17 @@ use App\Models\AbstractField;
 class Wysiwyg extends AbstractField
 {
     const DEFAULT_OPTIONS = [
-        'instructions' => '',
-        'required' => 0,
+        'instructions'      => '',
+        'required'          => 0,
         'conditional_logic' => 0,
-        'wrapper' => [
+        'wrapper'           => [
             'width' => '',
             'class' => '',
-            'id' => '',
+            'id'    => '',
         ],
         'default_value' => '',
-        'tabs' => 'all',
-        'toolbar' => 'full',
-        'media_upload' => 1,
+        'tabs'          => 'all',
+        'toolbar'       => 'full',
+        'media_upload'  => 1,
     ];
 }

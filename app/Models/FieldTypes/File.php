@@ -7,18 +7,18 @@ use App\Models\AbstractField;
 class File extends AbstractField
 {
     const DEFAULT_OPTIONS = [
-        'instructions' => '',
-        'required' => 0,
+        'instructions'      => '',
+        'required'          => 0,
         'conditional_logic' => 0,
-        'wrapper' => [
+        'wrapper'           => [
             'width' => '',
             'class' => '',
-            'id' => '',
+            'id'    => '',
         ],
         'return_format' => 'array',
-        'library' => 'all',
-        'min_size' => '',
-        'max_size' => '',
-        'mime_types' => '',
+        'library'       => 'all',
+        'min_size'      => '',
+        'max_size'      => '',
+        'mime_types'    => '',
     ];
 }

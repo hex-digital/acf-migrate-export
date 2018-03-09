@@ -7,16 +7,16 @@ use App\Models\AbstractField;
 class DateTimePicker extends AbstractField
 {
     const DEFAULT_OPTIONS = [
-        'instructions' => '',
-        'required' => 0,
+        'instructions'      => '',
+        'required'          => 0,
         'conditional_logic' => 0,
-        'wrapper' => [
+        'wrapper'           => [
             'width' => '',
             'class' => '',
-            'id' => '',
+            'id'    => '',
         ],
         'display_format' => 'd/m/Y g:i a',
-        'return_format' => 'd/m/Y g:i a',
-        'first_day' => 1,
+        'return_format'  => 'd/m/Y g:i a',
+        'first_day'      => 1,
     ];
 }

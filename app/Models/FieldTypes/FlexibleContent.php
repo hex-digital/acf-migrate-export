@@ -7,16 +7,16 @@ use App\Models\AbstractField;
 class FlexibleContent extends AbstractField
 {
     const DEFAULT_OPTIONS = [
-        'instructions' => '',
-        'required' => '',
+        'instructions'      => '',
+        'required'          => '',
         'conditional_logic' => '',
-        'wrapper' => [
+        'wrapper'           => [
             'width' => '',
             'class' => '',
-            'id' => '',
+            'id'    => '',
         ],
         'button_label' => 'Add Row',
-        'min' => '',
-        'max' => '',
+        'min'          => '',
+        'max'          => '',
     ];
 }
