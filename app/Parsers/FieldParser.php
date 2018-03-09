@@ -88,7 +88,14 @@ class FieldParser implements ParserInterface
     protected function extractSubFields(array $fieldArray): ?array
     {
         if (isset($fieldArray['sub_fields']) && count($fieldArray['sub_fields']) > 0) {
-            return $fieldArray['sub_fields'];
+            $fields = [];
+            $fieldParser = $this;
+
+            foreach ($fieldArray['sub_fields'] as $subFieldArray) {
+                $fields[] = $fieldParser->parse($subFieldArray);
+            }
+
+            return $fields;
         }
 
         return [];

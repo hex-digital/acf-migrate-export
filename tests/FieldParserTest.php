@@ -813,6 +813,27 @@ final class FieldParserTest extends TestCase
                     'layout' => 'table',
                     'button_label' => 'Add Row',
                     'sub_fields' => array (
+                        array (
+                            'key' => 'field_5aa26e4dd40e4',
+                            'label' => 'Text',
+                            'name' => 'text',
+                            'type' => 'text',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => 0,
+                            'wrapper' => array (
+                                'width' => '',
+                                'class' => '',
+                                'id' => '',
+                            ),
+                            'default_value' => '',
+                            'placeholder' => '',
+                            'prepend' => '',
+                            'append' => '',
+                            'maxlength' => '',
+                            'readonly' => 0,
+                            'disabled' => 0,
+                        )
                     ),
                 ),
             ],
