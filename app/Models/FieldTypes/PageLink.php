@@ -20,4 +20,12 @@ class PageLink extends AbstractField
         'allow_null' => 0,
         'multiple' => 0,
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'page_link';
+    }
 }

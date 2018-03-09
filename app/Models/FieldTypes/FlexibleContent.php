@@ -19,4 +19,12 @@ class FlexibleContent extends AbstractField
         'min' => '',
         'max' => '',
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'flexible_content';
+    }
 }

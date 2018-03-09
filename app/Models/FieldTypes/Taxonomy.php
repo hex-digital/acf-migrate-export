@@ -24,4 +24,12 @@ class Taxonomy extends AbstractField
         'return_format' => 'id',
         'multiple' => 0,
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'taxonomy';
+    }
 }

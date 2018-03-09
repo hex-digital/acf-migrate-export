@@ -20,4 +20,12 @@ class GoogleMap extends AbstractField
         'zoom' => '',
         'height' => '',
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'google_map';
+    }
 }

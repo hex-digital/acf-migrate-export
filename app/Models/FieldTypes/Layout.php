@@ -11,4 +11,12 @@ class Layout extends AbstractField
         'min' => '',
         'max' => '',
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'layout';
+    }
 }

@@ -126,4 +126,9 @@ abstract class AbstractField
             return (!isset($defaultOptions[$key]) || $defaultOptions[$key] !== $value);
         }, ARRAY_FILTER_USE_BOTH);
     }
+
+    /**
+     * @return string
+     */
+    abstract public function getType(): string;
 }

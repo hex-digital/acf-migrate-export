@@ -23,4 +23,12 @@ class TextArea extends AbstractField
         'readonly' => 0,
         'disabled' => 0,
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'textarea';
+    }
 }

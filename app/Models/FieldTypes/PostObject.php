@@ -22,4 +22,12 @@ class PostObject extends AbstractField
         'return_format' => 'object',
         'ui' => 1,
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'post_object';
+    }
 }

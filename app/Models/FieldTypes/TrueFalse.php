@@ -18,4 +18,12 @@ class TrueFalse extends AbstractField
         'message' => '',
         'default_value' => 0,
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'true_false';
+    }
 }

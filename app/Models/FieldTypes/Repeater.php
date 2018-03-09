@@ -21,4 +21,12 @@ class Repeater extends AbstractField
         'layout' => 'table',
         'button_label' => 'Add Row'
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'repeater';
+    }
 }

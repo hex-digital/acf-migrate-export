@@ -17,4 +17,12 @@ class ColorPicker extends AbstractField
         ],
         'default_value' => '',
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'color_picker';
+    }
 }

@@ -19,4 +19,12 @@ class DateTimePicker extends AbstractField
         'return_format' => 'd/m/Y g:i a',
         'first_day' => 1,
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'date_time_picker';
+    }
 }

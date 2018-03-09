@@ -27,4 +27,12 @@ class Relationship extends AbstractField
         'max' => '',
         'return_format' => 'object',
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'relationship';
+    }
 }

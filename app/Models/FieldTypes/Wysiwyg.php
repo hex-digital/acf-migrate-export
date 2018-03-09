@@ -20,4 +20,12 @@ class Wysiwyg extends AbstractField
         'toolbar' => 'full',
         'media_upload' => 1,
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'wysiwyg';
+    }
 }

@@ -19,4 +19,12 @@ class Message extends AbstractField
         'new_lines' => 'wpautop',
         'esc_html' => 0,
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'message';
+    }
 }

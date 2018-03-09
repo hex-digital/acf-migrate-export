@@ -18,4 +18,12 @@ class Tab extends AbstractField
         'placement' => 'top',
         'endpoint' => 0,
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'tab';
+    }
 }

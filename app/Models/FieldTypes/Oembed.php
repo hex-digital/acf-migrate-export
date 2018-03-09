@@ -18,4 +18,12 @@ class Oembed extends AbstractField
         'width' => '',
         'height' => '',
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'oembed';
+    }
 }

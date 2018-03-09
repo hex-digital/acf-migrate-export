@@ -22,4 +22,12 @@ class Radio extends AbstractField
         'default_value' => '',
         'layout' => 'vertical',
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'radio';
+    }
 }

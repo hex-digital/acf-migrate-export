@@ -20,4 +20,12 @@ class Email extends AbstractField
         'prepend' => '',
         'append' => '',
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'email';
+    }
 }

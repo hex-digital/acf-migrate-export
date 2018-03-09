@@ -20,4 +20,12 @@ class Checkbox extends AbstractField
         'layout' => 'vertical',
         'toggle' => 0,
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'checkbox';
+    }
 }

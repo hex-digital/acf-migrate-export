@@ -21,4 +21,12 @@ class File extends AbstractField
         'max_size' => '',
         'mime_types' => '',
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'file';
+    }
 }

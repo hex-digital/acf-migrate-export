@@ -18,4 +18,12 @@ class Url extends AbstractField
         'default_value' => '',
         'placeholder' => '',
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'url';
+    }
 }

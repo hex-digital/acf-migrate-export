@@ -25,4 +25,12 @@ class Select extends AbstractField
         'disabled' => 0,
         'readonly' => 0,
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'select';
+    }
 }

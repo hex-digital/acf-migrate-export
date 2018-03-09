@@ -18,4 +18,12 @@ class TimePicker extends AbstractField
         'display_format' => 'g:i a',
         'return_format' => 'g:i a',
     ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'time_picker';
+    }
 }
