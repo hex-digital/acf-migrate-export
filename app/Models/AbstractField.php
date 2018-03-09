@@ -38,7 +38,7 @@ abstract class AbstractField
         string $type,
         array $subFields = [],
         array $options = []
-    ) {
+    ): self {
         $fieldClassName = __NAMESPACE__.'\\FieldTypes\\'.TextManipulation::slugToClassName($type);
 
         if (!class_exists($fieldClassName)) {
