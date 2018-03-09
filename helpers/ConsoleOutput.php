@@ -15,11 +15,11 @@ class ConsoleOutput
 
     /**
      * Stylise and output a message to the console.
-     * Specifying a type adds a prefix and colour
+     * Specifying a type adds a prefix and colour.
      *
-     * @param  string $message
-     * @param  string|null $type Optional type - use constant from self:
-     *                           ::ERROR, ::WARN or ::SUCCESS
+     * @param string      $message
+     * @param string|null $type    Optional type - use constant from self:
+     *                             ::ERROR, ::WARN or ::SUCCESS
      */
     public static function write(string $message, $type = null)
     {
