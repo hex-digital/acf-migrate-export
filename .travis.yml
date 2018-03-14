@@ -16,3 +16,7 @@ matrix:
   allow_failures:
     - nightly
   fast_finish: true
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
