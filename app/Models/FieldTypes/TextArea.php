@@ -4,7 +4,7 @@ namespace App\Models\FieldTypes;
 
 use App\Models\AbstractField;
 
-class TextArea extends AbstractField
+class Textarea extends AbstractField
 {
     const DEFAULT_OPTIONS = [
         'instructions'      => '',
