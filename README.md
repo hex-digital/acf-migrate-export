@@ -1,6 +1,8 @@
 # acf-migrate-export
 A tool to turn a PHP ACF Export into a migrations file fit for acf-migrations.phar.
 
+[![Build Status](https://travis-ci.org/hex-digital/acf-migrate-export.svg?branch=master)](https://travis-ci.org/hex-digital/acf-migrate-export)
+
 ## Setup
 
     composer install
