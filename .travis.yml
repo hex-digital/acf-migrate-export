@@ -1,6 +1,18 @@
+sudo: required
 language: php
+dist: trust
+
 php:
   - '7.1'
+  - nightly
+
+install:
+  - travis_retry composer install --no-interaction --prefer-dist --no-suggest --dev
+
 script:
-  - composer install
   - ./vendor/bin/phpunit --bootstrap vendor/autoload.php tests* --verbose
+
+matrix:
+  allow_failures:
+    - nightly
+  fast_finish: true
