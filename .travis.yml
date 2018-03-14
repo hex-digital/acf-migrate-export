@@ -1,5 +1,6 @@
 language: php
 php:
   - '7.1'
-build: composer install
-script: ./vendor/bin/phpunit --bootstrap vendor/autoload.php tests* --verbose
+script:
+  - composer install
+  - ./vendor/bin/phpunit --bootstrap vendor/autoload.php tests* --verbose
