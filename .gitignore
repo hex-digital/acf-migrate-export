@@ -1,6 +1,5 @@
 .DS_Store
 build-phar.php
-composer.json
 generate-phar.sh
 phar
 vendor
