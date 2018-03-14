@@ -1,0 +1,92 @@
+<?php
+// The following is taken straight from an ACF export in WordPress
+
+if( function_exists('acf_add_local_field_group') ):
+
+acf_add_local_field_group(array (
+    "key" => "group_03fb2ef",
+    "title" => "Flexible",
+    "fields" => [
+        [
+            "key" => "field_5e6d01d",
+            "label" => "Flexible Content",
+            "name" => "flexible_content",
+            "type" => "flexible_content",
+            "layouts" => [
+                [
+                    "key" => "5d07925",
+                    "name" => "centre_section",
+                    "label" => "Centre Section",
+                    "display" => "block",
+                    "sub_fields" => [
+                        [
+                            "key" => "field_9062c30",
+                            "label" => "Section Colour",
+                            "name" => "section_colour",
+                            "type" => "select",
+                            "choices" => [
+                                "white" => "white",
+                                "pink" => "pink",
+                                "grey" => "grey"
+                            ]
+                        ],
+                        [
+                            "key" => "field_f7523e5",
+                            "label" => "Add Dropcap",
+                            "name" => "add_dropcap",
+                            "type" => "select",
+                            "choices" => [
+                                "no" => "No",
+                                "yes" => "Yes"
+                            ],
+                            "instructions" => "Whether or not to add a dropcap to the first paragraph of the section"
+                        ],
+                        [
+                            "key" => "field_11de789",
+                            "label" => "Content",
+                            "name" => "content",
+                            "type" => "wysiwyg",
+                            "instructions" => "The content to display in the section"
+                        ],
+                        [
+                            "key" => "field_8caa753",
+                            "label" => "Spacing Top And Bottom",
+                            "name" => "spacing_top_and_bottom",
+                            "type" => "checkbox",
+                            "choices" => [
+                                "top" => "Top",
+                                "bottom" => "Bottom"
+                            ],
+                            "default_value" => [
+                                "top",
+                                "bottom"
+                            ],
+                            "layout" => "vertical",
+                            "instructions" => "Should this section have extra spacing at the top and/or bottom?"
+                        ]
+                    ]
+                ],
+            ]
+        ]
+    ],
+    "location" => [
+        [
+            [
+                "param" => "page_template",
+                "operator" => "==",
+                "value" => "templates/flexible.php"
+            ]
+        ]
+    ],
+    "options" => [
+        "position" => "normal",
+        "hide_on_screen" => ""
+    ],
+    "menu_order" => 0,
+    "hide_on_screen" => [
+        "content_editor"
+    ],
+    "instruction_placement" => "label"
+));
+
+endif;

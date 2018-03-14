@@ -23,6 +23,15 @@ class FieldParser implements ParserInterface
         $subFields = $this->extractSubFields($fieldArray);
         $options = $this->extractOptions($fieldArray);
 
+        // TODO: Reconsider this to make it more Object Oriented
+        // Consider making FieldParser abstract, and then make one for sub_fields
+        // and one for layouts.
+        // Then split the functions called above (remove type) and called Layout::createField
+        // instead for the layout one
+        if ($type === 'flexible_content') {
+            $subFields = $this->extractLayouts($fieldArray);
+        }
+
         return AbstractField::createField($key, $label, $type, $subFields, $options);
     }
 
@@ -89,10 +98,31 @@ class FieldParser implements ParserInterface
     {
         if (isset($fieldArray['sub_fields']) && count($fieldArray['sub_fields']) > 0) {
             $fields = [];
-            $fieldParser = $this;
 
             foreach ($fieldArray['sub_fields'] as $subFieldArray) {
-                $fields[] = $fieldParser->parse($subFieldArray);
+                $fields[] = $this->parse($subFieldArray);
+            }
+
+            return $fields;
+        }
+
+        return [];
+    }
+
+    /**
+     * Extract the layouts from a field array.
+     *
+     * @param array $fieldArray
+     *
+     * @return array
+     */
+    protected function extractLayouts(array $fieldArray): ?array
+    {
+        if (isset($fieldArray['layouts']) && count($fieldArray['layouts']) > 0) {
+            $fields = [];
+
+            foreach ($fieldArray['layouts'] as $layoutArray) {
+                $fields[] = $this->parse($layoutArray);
             }
 
             return $fields;
