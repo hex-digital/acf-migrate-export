@@ -4,7 +4,7 @@ namespace App\Models\FieldTypes;
 
 use App\Models\AbstractField;
 
-class Text extends AbstractField
+class Image extends AbstractField
 {
     const DEFAULT_OPTIONS = [
         'instructions'      => '',
@@ -15,13 +15,16 @@ class Text extends AbstractField
             'class' => '',
             'id'    => '',
         ],
-        'default_value' => '',
-        'placeholder'   => '',
-        'prepend'       => '',
-        'append'        => '',
-        'maxlength'     => '',
-        'readonly'      => 0,
-        'disabled'      => 0,
+        'return_format' => 'array',
+        'preview_size'  => 'thumbnail',
+        'library'       => 'all',
+        'min_width'     => '',
+        'min_height'    => '',
+        'min_size'      => '',
+        'max_width'     => '',
+        'max_height'    => '',
+        'max_size'      => '',
+        'mime_types'    => '',
     ];
 
     /**
@@ -29,6 +32,6 @@ class Text extends AbstractField
      */
     public function getType(): string
     {
-        return 'text';
+        return 'image';
     }
 }

@@ -4,7 +4,7 @@ namespace App\Models\FieldTypes;
 
 use App\Models\AbstractField;
 
-class Text extends AbstractField
+class Taxonomy extends AbstractField
 {
     const DEFAULT_OPTIONS = [
         'instructions'      => '',
@@ -15,13 +15,14 @@ class Text extends AbstractField
             'class' => '',
             'id'    => '',
         ],
-        'default_value' => '',
-        'placeholder'   => '',
-        'prepend'       => '',
-        'append'        => '',
-        'maxlength'     => '',
-        'readonly'      => 0,
-        'disabled'      => 0,
+        'taxonomy'      => 'category',
+        'field_type'    => 'checkbox',
+        'allow_null'    => 0,
+        'add_term'      => 1,
+        'save_terms'    => 0,
+        'load_terms'    => 0,
+        'return_format' => 'id',
+        'multiple'      => 0,
     ];
 
     /**
@@ -29,6 +30,6 @@ class Text extends AbstractField
      */
     public function getType(): string
     {
-        return 'text';
+        return 'taxonomy';
     }
 }

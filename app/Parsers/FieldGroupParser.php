@@ -36,7 +36,7 @@ class FieldGroupParser implements ParserInterface
      */
     protected function extractKey(array $fieldGroupArray): ?string
     {
-        if (isset($fieldGroupArray['key'])) {
+        if (isset($fieldGroupArray['key']) && strlen($fieldGroupArray['key']) > 0) {
             return $fieldGroupArray['key'];
         }
 
@@ -47,6 +47,8 @@ class FieldGroupParser implements ParserInterface
      * Extract the title field value from a field group array.
      *
      * @param array $fieldGroupArray
+     *
+     * @throws OutOfBoundsException if no title key is set in field group array
      *
      * @return string
      */
@@ -68,7 +70,14 @@ class FieldGroupParser implements ParserInterface
      */
     protected function extractFields(array $fieldGroupArray): array
     {
-        return [];
+        $fields = [];
+        $fieldParser = new FieldParser();
+
+        foreach ($fieldGroupArray['fields'] as $fieldArray) {
+            $fields[] = $fieldParser->parse($fieldArray);
+        }
+
+        return $fields;
     }
 
     /**

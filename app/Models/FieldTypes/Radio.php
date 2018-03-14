@@ -4,7 +4,7 @@ namespace App\Models\FieldTypes;
 
 use App\Models\AbstractField;
 
-class Text extends AbstractField
+class Radio extends AbstractField
 {
     const DEFAULT_OPTIONS = [
         'instructions'      => '',
@@ -15,13 +15,12 @@ class Text extends AbstractField
             'class' => '',
             'id'    => '',
         ],
-        'default_value' => '',
-        'placeholder'   => '',
-        'prepend'       => '',
-        'append'        => '',
-        'maxlength'     => '',
-        'readonly'      => 0,
-        'disabled'      => 0,
+        'choices'           => [],
+        'allow_null'        => 0,
+        'other_choice'      => 0,
+        'save_other_choice' => 0,
+        'default_value'     => '',
+        'layout'            => 'vertical',
     ];
 
     /**
@@ -29,6 +28,6 @@ class Text extends AbstractField
      */
     public function getType(): string
     {
-        return 'text';
+        return 'radio';
     }
 }

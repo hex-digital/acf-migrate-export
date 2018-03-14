@@ -4,7 +4,7 @@ namespace App\Models\FieldTypes;
 
 use App\Models\AbstractField;
 
-class Text extends AbstractField
+class DateTimePicker extends AbstractField
 {
     const DEFAULT_OPTIONS = [
         'instructions'      => '',
@@ -15,13 +15,9 @@ class Text extends AbstractField
             'class' => '',
             'id'    => '',
         ],
-        'default_value' => '',
-        'placeholder'   => '',
-        'prepend'       => '',
-        'append'        => '',
-        'maxlength'     => '',
-        'readonly'      => 0,
-        'disabled'      => 0,
+        'display_format' => 'd/m/Y g:i a',
+        'return_format'  => 'd/m/Y g:i a',
+        'first_day'      => 1,
     ];
 
     /**
@@ -29,6 +25,6 @@ class Text extends AbstractField
      */
     public function getType(): string
     {
-        return 'text';
+        return 'date_time_picker';
     }
 }

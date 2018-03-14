@@ -35,6 +35,21 @@ final class FieldGroupParserTest extends TestCase
      */
     public function testCanParseEmptyKeyField(array $fieldGroupArray): void
     {
+        $fieldGroupArray['key'] = '';
+
+        $fieldGroupParser = new App\Parsers\FieldGroupParser();
+        $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
+
+        $this->assertNull($fieldGroup->getKey());
+    }
+
+    /**
+     * @depends testDoesReturnFieldGroupObject
+     * @depends testCanParseKeyField
+     * @dataProvider fieldGroupArrayProvider
+     */
+    public function testCanParseWithoutKeyField(array $fieldGroupArray): void
+    {
         unset($fieldGroupArray['key']);
 
         $fieldGroupParser = new App\Parsers\FieldGroupParser();
@@ -83,10 +98,55 @@ final class FieldGroupParserTest extends TestCase
         $this->assertCount(9, $fieldGroup->getOptions());
     }
 
+    /**
+     * @depends testDoesReturnFieldGroupObject
+     * @depends testCanParseCorrectAmountOfOptions
+     * @dataProvider fieldGroupArrayProvider
+     */
+    public function testCanParseZeroOptions(array $fieldGroupArray): void
+    {
+        $keysToKeep = ['key', 'title', 'fields'];
+        $fieldGroupArrayWithoutOptions = array_intersect_key($fieldGroupArray, array_flip($keysToKeep));
+
+        $fieldGroupParser = new App\Parsers\FieldGroupParser();
+        $fieldGroup = $fieldGroupParser->parse($fieldGroupArrayWithoutOptions);
+
+        $this->assertNotNull($fieldGroup->getOptions());
+        $this->assertCount(0, $fieldGroup->getOptions());
+    }
+
+    /**
+     * @depends testDoesReturnFieldGroupObject
+     * @dataProvider fieldGroupArrayProvider
+     */
+    public function testCanParseCorrectAmountOfFields(array $fieldGroupArray): void
+    {
+        $fieldGroupParser = new App\Parsers\FieldGroupParser();
+        $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
+
+        $this->assertCount(2, $fieldGroup->getFields());
+    }
+
+    /**
+     * @depends testDoesReturnFieldGroupObject
+     * @depends testCanParseCorrectAmountOfFields
+     * @dataProvider fieldGroupArrayProvider
+     */
+    public function testCanParseZeroFields(array $fieldGroupArray): void
+    {
+        $fieldGroupArray['fields'] = [];
+
+        $fieldGroupParser = new App\Parsers\FieldGroupParser();
+        $fieldGroup = $fieldGroupParser->parse($fieldGroupArray);
+
+        $this->assertNotNull($fieldGroup->getFields());
+        $this->assertCount(0, $fieldGroup->getFields());
+    }
+
     public function fieldGroupArrayProvider(): array
     {
         return [
-            [
+            'Group with 2 text fields' => [
                 // array() syntax, as it comes from export file
                 array (
                     'key' => 'group_5890806ca5bd0',
@@ -96,6 +156,27 @@ final class FieldGroupParserTest extends TestCase
                             'key' => 'field_589080989511c',
                             'label' => 'Group Title',
                             'name' => 'group_title',
+                            'type' => 'text',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => 0,
+                            'wrapper' => array (
+                                'width' => '',
+                                'class' => '',
+                                'id' => '',
+                            ),
+                            'default_value' => '',
+                            'maxlength' => '',
+                            'placeholder' => '',
+                            'prepend' => '',
+                            'append' => '',
+                            'readonly' => 0,
+                            'disabled' => 0,
+                        ),
+                        array (
+                            'key' => 'field_589080989521c',
+                            'label' => 'Group Slug',
+                            'name' => 'group_slug',
                             'type' => 'text',
                             'instructions' => '',
                             'required' => 0,

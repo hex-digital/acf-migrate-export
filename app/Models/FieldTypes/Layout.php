@@ -6,4 +6,17 @@ use App\Models\AbstractField;
 
 class Layout extends AbstractField
 {
+    const DEFAULT_OPTIONS = [
+        'display' => 'block',
+        'min'     => '',
+        'max'     => '',
+    ];
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return 'layout';
+    }
 }

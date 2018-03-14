@@ -4,7 +4,7 @@ namespace App\Models\FieldTypes;
 
 use App\Models\AbstractField;
 
-class Text extends AbstractField
+class User extends AbstractField
 {
     const DEFAULT_OPTIONS = [
         'instructions'      => '',
@@ -15,13 +15,9 @@ class Text extends AbstractField
             'class' => '',
             'id'    => '',
         ],
-        'default_value' => '',
-        'placeholder'   => '',
-        'prepend'       => '',
-        'append'        => '',
-        'maxlength'     => '',
-        'readonly'      => 0,
-        'disabled'      => 0,
+        'role'       => '',
+        'allow_null' => 0,
+        'multiple'   => 0,
     ];
 
     /**
@@ -29,6 +25,6 @@ class Text extends AbstractField
      */
     public function getType(): string
     {
-        return 'text';
+        return 'user';
     }
 }

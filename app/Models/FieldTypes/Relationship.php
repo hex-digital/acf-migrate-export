@@ -4,7 +4,7 @@ namespace App\Models\FieldTypes;
 
 use App\Models\AbstractField;
 
-class Text extends AbstractField
+class Relationship extends AbstractField
 {
     const DEFAULT_OPTIONS = [
         'instructions'      => '',
@@ -15,13 +15,17 @@ class Text extends AbstractField
             'class' => '',
             'id'    => '',
         ],
-        'default_value' => '',
-        'placeholder'   => '',
-        'prepend'       => '',
-        'append'        => '',
-        'maxlength'     => '',
-        'readonly'      => 0,
-        'disabled'      => 0,
+        'post_type' => [],
+        'taxonomy'  => [],
+        'filters'   => [
+            0 => 'search',
+            1 => 'post_type',
+            2 => 'taxonomy',
+        ],
+        'elements'      => '',
+        'min'           => '',
+        'max'           => '',
+        'return_format' => 'object',
     ];
 
     /**
@@ -29,6 +33,6 @@ class Text extends AbstractField
      */
     public function getType(): string
     {
-        return 'text';
+        return 'relationship';
     }
 }

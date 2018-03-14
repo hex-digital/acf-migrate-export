@@ -4,7 +4,7 @@ namespace App\Models\FieldTypes;
 
 use App\Models\AbstractField;
 
-class Text extends AbstractField
+class Textarea extends AbstractField
 {
     const DEFAULT_OPTIONS = [
         'instructions'      => '',
@@ -17,9 +17,9 @@ class Text extends AbstractField
         ],
         'default_value' => '',
         'placeholder'   => '',
-        'prepend'       => '',
-        'append'        => '',
         'maxlength'     => '',
+        'rows'          => '',
+        'new_lines'     => 'wpautop',
         'readonly'      => 0,
         'disabled'      => 0,
     ];
@@ -29,6 +29,6 @@ class Text extends AbstractField
      */
     public function getType(): string
     {
-        return 'text';
+        return 'textarea';
     }
 }
